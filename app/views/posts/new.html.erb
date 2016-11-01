@@ -1,0 +1,10 @@
+<h3>Here's where you submit a new Post/Link </h3>
+
+<%= form_for @post, url: user_posts_path(@user) do |f| %>
+  <%= f.text_field :title, class: "input-group" %>
+  <%= f.text_field :content %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<h5>Or you can return to the <%= link_to "homepage", root_path %></h5>
+

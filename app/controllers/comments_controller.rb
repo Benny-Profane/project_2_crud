@@ -1,24 +1,24 @@
 class CommentsController < ApplicationController
 
-def index
+  def index
 
-end
+  end
 
-def create
+  def create
 
-end
+  end
 
-def show
+  def show
 
-end
+  end
 
-def edit
+  def edit
 
-end
+  end
 
-def destroy
+  def destroy
 
-end
+  end
 
 
 end

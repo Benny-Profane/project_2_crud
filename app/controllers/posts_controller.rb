@@ -1,23 +1,43 @@
 class PostsController < ApplicationController
 
-def index
+  def index
 
-end
+  end
 
-def create
+  def new
+     @user = User.find(params[:user_id])
+     @post = @user.posts.new
+  end
 
-end
+  def create
+    @user = User.find(params[:user_id])
+    @post = @user.posts.new(post_params)
+    if @post.save
+      redirect_to root_path, notice: "Post created!"
+    else
+      render 'new'
+    end
+  end
 
-def show
+  def show
 
-end
+  end
 
-def edit
+  def edit
 
-end
+  end
 
-def destroy
+  def destroy
 
-end
+  end
+
+  private
+    def post_params
+      params.require(:post).permit(
+        :title,
+        :content,
+        :votes
+        )
+    end
 
 end
