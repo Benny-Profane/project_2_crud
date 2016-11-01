@@ -19,8 +19,9 @@ puts "Database seeded with #{users.length} users!"
 Post.destroy_all
 
 posts = Post.create([
-  {content: "Quotes?", vote: 10 },
-  {content: "Facts?", vote: 0 }
+  {title: "Title1", content: "Quotes?", vote: 10, user_id: 1 },
+  {title: "Title2", content: "Facts?", vote: 0, user_id: 2 },
+  {title: "Title3", content: "Content3", vote: 100, user_id: 2}
   ])
 
 puts "Database seeded with #{posts.length} posts!"
