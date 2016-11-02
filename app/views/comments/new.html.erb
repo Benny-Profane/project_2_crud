@@ -2,7 +2,7 @@ This is where you comment on a post.
 
 Or get back <%= link_to "home", root_path %>.
 
-<%= form_for @comment, url: new_user_post_comment_path(@post.user_id, @post.id) do |f| %>
+<%= form_for @comment, url: user_post_comments_path(@post.user_id, @post.id) do |f| %>
   <%= f.text_field :content, class: "input-group" %>
   <%= f.submit "Submit" %>
 <% end %>

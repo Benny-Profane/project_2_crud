@@ -24,7 +24,16 @@ class UsersController < ApplicationController
   end
 
   def edit
+     @user = User.find(params[:id])
+     redirect_to edit_user_path
+  end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    reset_session
+    flash[:notice] = "So long, #{@user.name}!"
+    redirect_to root_path
   end
 
   private def user_params

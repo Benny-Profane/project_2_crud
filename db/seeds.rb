@@ -10,7 +10,8 @@ User.destroy_all
 
 users = User.create([
   {name: "James", email: 'jcostello10@gmail.com', password: "abc123", password_confirmation: "abc123" },
-  {name: "Ace", email: "mrace@gmail.com", password: "abc123", password_confirmation: "abc123" }
+  {name: "Ace", email: "mrace@gmail.com", password: "abc123", password_confirmation: "abc123" },
+  {name: "Fleetwood Mac", email: "fleetwood@gmail.com", password: "123", password_confirmation: "123"}
   ])
 
 puts "Database seeded with #{users.length} users!"
@@ -25,3 +26,13 @@ posts = Post.create([
   ])
 
 puts "Database seeded with #{posts.length} posts!"
+
+Comment.destroy_all
+
+comments = Comment.create([
+   {content: "commenttest1", vote: 10 },
+   {content: "commenttest2", vote: 50 },
+   {content: "commenttest3", vote: 100 }
+  ])
+
+puts "Database seeded with #{comments.length} comments!"

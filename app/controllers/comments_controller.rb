@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
+    before_action :authorize, except: [:index, :show]
 
   def index
-
+    @comments = Comment.all
   end
 
   def new
@@ -10,7 +11,14 @@ class CommentsController < ApplicationController
   end
 
   def create
-
+    @user = User.find(params[:user_id])
+    @comment = @user.comments.new(comment_params)
+    @comment.post_id = params[:post_id]
+     if @comment.save
+      redirect_to root_path
+     else
+       render 'new'
+     end
   end
 
   def show
@@ -25,5 +33,13 @@ class CommentsController < ApplicationController
 
   end
 
+  private
+
+    def comment_params
+      params.require(:comment).permit(
+        :content,
+        :votes
+        )
+    end
 
 end
