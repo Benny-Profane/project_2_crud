@@ -1,1 +1,40 @@
-This is where you can edit your profile.
+
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+   <div class="error_messages">
+    <h2>Form is invalid</h2>
+     <ul>
+      <% for message in @user.errors.full_messages %>
+      <li> <%= message %> </li>
+      <% end %>
+     </ul>
+   </div>
+  <% end %>
+
+   <div class="field input-group margin-bottom-sm">
+   <span class="input-group-addon"><i class="fa fa-user fa-fw" aria-hidden="true"></i></span>
+     <%#= f.label :name %>
+     <%= f.text_field :name, :class => 'form-control', :type => "user", :placeholder => "Username" %>
+   </div>
+
+   <div class="field input-group margin-bottom-sm">
+   <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i></span>
+      <%#= f.label :email %>
+      <%= f.email_field :email, :class => 'form-control', :type => "email", :placeholder => "Email" %>
+   </div>
+
+  <div class="field input-group margin-bottom-sm">
+  <span class="input-group-addon"><i class="fa fa-key fa-fw" aria-hidden="true"></i></span>
+      <%#= f.label :password %>
+      <%= f.password_field :password, :class => 'form-control', :type => "password", :placeholder => "Password" %>
+   </div>
+
+    <div class="field input-group margin-bottom-sm">
+  <span class="input-group-addon"><i class="fa fa-key fa-fw" aria-hidden="true"></i></span>
+      <%#= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, :class => 'form-control', :type => "password", :placeholder => "Password Confirmation" %>
+   </div>
+
+     <div class="actions"> <%= f.submit %> </div>
+<% end %>

@@ -2,48 +2,45 @@
 <html>
 <head>
   <title>Project2Crud</title>
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <%= link_to "Home", root_path, :class =>"navbar-brand" %>
+        </div>
 
-
-   <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "Home", root_path, :class =>"navbar-brand" %>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <% if current_user %>
-          <li><a href="/logout">Log Out</a></li>
-        <% else %>
-        <li class="active"><a href="/login">Log In<span class="sr-only">(current)</span></a></li>
-        <li><a href="/signup">Sign Up</a></li>
-        <% end %>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">About This Site</a></li>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
             <% if current_user %>
-            <li> <%= link_to "User Profile", user_path(current_user.id) %></li>
-            <li><%= link_to "Make A Post", new_user_post_path(current_user.id) %></li>
+              <li><%= link_to "Make A Post", new_user_post_path(current_user.id) %></li>
             <% end %>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+          </ul>
+            <ul class="nav navbar-nav navbar-right">
+            <% if current_user %>
+              <li><a href="/logout">Log Out</a></li>
+            <% else %>
+              <li class="active"><a href="/login">Log In<span class="sr-only">(current)</span></a></li>
+              <li><a href="/signup">Sign Up</a></li>
+            <% end %>
+            <% if current_user %>
+              <li> <%= link_to "User Profile", user_path(current_user.id) %></li>
+            <% end %>
+              <li><a data-target="#about" data-toggle="modal" data-backdrop="true" href="#about">About</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+<div class="text-center"><!-- Text center -->
+
 
   <div class="container">
     <% flash.each do |type, message| %>
@@ -51,7 +48,49 @@
     <% end %>
   </div>
 
+
 <%= yield %>
+
+</div> <!-- Text center ends -->
+
+<!-- footer -->
+  <div class="navbar navbar-inverse navbar-fixed-bottom navbar-inner" role="navigation">
+      <div class="container">
+          <div class="navbar-text pull=left">
+            <p>Rails Demo</p>
+          </div>
+          <div class="navbar-text pull-right">
+            <a href="#"><i class="fa fa-bug fa-spin fa-2x fa-fw"></i></a>
+          </div>
+      </div>
+  </div>
+<!-- footer ends -->
+
+
+<!-- Jquery Modal Classes -->
+<div class="modal fade" id="about" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+       <h5>ABOUT</h5>
+        <div class="modal-body">
+         <p>"Before our palace stands a mirror,
+         the ascent to which consists of five and twenty steps
+         of porpyry and serpentine ...
+         <br><br>
+         This mirror is guarded day and night by three thousand men.
+         We look therein and behold all that is taking place in every
+         province and region subject to our sceptre."</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 </body>
 </html>

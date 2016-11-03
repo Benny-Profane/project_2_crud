@@ -1,10 +1,21 @@
-<h3>Here's where you submit a new Post/Link </h3>
+
+<div class="text-center">
+<h3> Submit a Link <i class="fa fa-link" aria-hidden="true"></i> </h3>
+
 
 <%= form_for @post, url: user_posts_path(@user) do |f| %>
-  <%= f.text_field :title, class: "input-group" %>
-  <%= f.text_field :content %>
-  <%= f.submit "Submit" %>
-<% end %>
 
-<h5>Or you can return to the <%= link_to "homepage", root_path %></h5>
+<div class="field input-group margin-bottom-sm">
+  <span class="input-group-addon"><i class="fa fa-sticky-note fa-fw" aria-hidden="true"></i></span>
+      <%= f.text_field :title, :class => 'form-control', :type => "title", :placeholder => "title" %>
+ </div>
 
+<div class="field input-group margin-bottom-sm">
+  <span class="input-group-addon"><i class="fa fa-laptop fa-fw" aria-hidden="true"></i></span>
+      <%= f.text_field :content, :class => 'form-control', :type => "URL", :placeholder => "URL" %>
+</div>
+      <%= f.submit "Submit" %>
+    <% end %>
+
+<!-- <h5>Or you can return to the <%= link_to "homepage", root_path %></h5> -->
+</div>

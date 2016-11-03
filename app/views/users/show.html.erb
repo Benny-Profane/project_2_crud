@@ -1,12 +1,5 @@
-<!-- @user.id == current.user.id
-@user.posts.length == 0
- -->
-Why not create a <%= link_to "post", new_user_post_path(@user.id) %>?
-
-<br><br>
 
 
 This is where you can view, <%= link_to "edit", edit_user_path(current_user.id) %>
 and <%= link_to "destroy", user_path(current_user.id), method: :delete, data: {confirm: "Are you sure?"} %> your profile.
 <br><br>
-<h3>Or you can return to the <%= link_to "homepage", root_path %></h3>

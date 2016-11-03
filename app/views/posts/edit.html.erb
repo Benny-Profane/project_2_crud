@@ -1,0 +1,6 @@
+
+<%= form_for @post, url: user_post_path do |f| %>
+  <%= f.text_field :title, class: "input-group" %>
+  <%= f.text_field :content %>
+  <%= f.submit "Submit" %>
+<% end %>

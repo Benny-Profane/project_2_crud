@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20161101215933) do
   enable_extension "plpgsql"
 
   create_table "comment_votes", force: :cascade do |t|
-    t.string   "user_id"
-    t.string   "comment_id"
+    t.integer  "user_id"
+    t.integer  "comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20161101215933) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "post_votes", force: :cascade do |t|
-    t.string   "user_id"
-    t.string   "post_id"
+    t.integer  "user_id"
+    t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
