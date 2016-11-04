@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.destroy_all
+PostVote.destroy_all
 
 users = User.create([
   {name: "James", email: 'jcostello10@gmail.com', password: "abc123", password_confirmation: "abc123" },
