@@ -60,7 +60,8 @@ body {
   }
 
 body {
-background-color: #e6e6fa
+background-color: #000000;
+color: white;
 }
 
 .jumbotron {
@@ -81,4 +82,14 @@ background-color: #e6e6fa
   max-width: 80%;
 }
 
+#post-form  {
+  margin: auto;
+  width: 400px;
+  max-width: 80%;
+}
 
+#login-form  {
+  margin: auto;
+  width: 400px;
+  max-width: 80%;
+}
