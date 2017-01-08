@@ -27,10 +27,8 @@ class PostsController < ApplicationController
   end
 
   def edit
-    # binding.pry
     @post = Post.find(params[:id])
     @user = @post.user
-    # Query user's post array for post
   end
 
   def update
@@ -43,11 +41,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-     # binding.pry
      @user = User.find(params[:user_id])
      @post = Post.find(params[:id])
      @post.destroy
-     flash[:notice] = "No worries #{@user.name}. Your post has been turned into compost (hehe)."
+     flash[:notice] = "No worries #{@user.name}. We get it. Your post has been deleted."
      redirect_to root_path
   end
 

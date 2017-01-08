@@ -24,16 +24,6 @@ posts = Post.create([
   {title: "Title1", content: "Seeds", vote: 10, user_id: 3 },
   {title: "Title2", content: "Seeds", vote: 0, user_id: 3 },
   {title: "Titleseed", content: "ContentSeed", vote: 100, user_id: 3},
-  {title: "Titleseed", content: "ContentSeed", vote: 100, user_id: 3},
-  {title: "Titleseed", content: "ContentSeed", vote: 100, user_id: 3},
-  {title: "Titleseed", content: "ContentSeed", vote: 100, user_id: 3},
-  {title: "Titleseed", content: "ContentSeed", vote: 100, user_id: 3},
-  {title: "Titleseed", content: "ContentSeed", vote: 100, user_id: 3},
-  {title: "Titleseed", content: "ContentSeed", vote: 100, user_id: 3},
-  {title: "Titleseed", content: "ContentSeed", vote: 100, user_id: 3},
-  {title: "Titleseed", content: "ContentSeed", vote: 100, user_id: 3},
-  {title: "Titleseed", content: "ContentSeed", vote: 100, user_id: 3},
-  {title: "Titleseed", content: "ContentSeed", vote: 100, user_id: 3}
   ])
 
 puts "Database seeded with #{posts.length} posts!"
