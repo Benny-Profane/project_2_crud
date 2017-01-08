@@ -1,8 +1,14 @@
-This is where you comment on a post.
+<br>
+<div id="comment-container">
 
-Or get back <%= link_to "home", root_path %>.
-
-<%= form_for @comment, url: user_post_comments_path(@post.user_id, @post.id) do |f| %>
-  <%= f.text_field :content, class: "input-group" %>
-  <%= f.submit "Submit" %>
-<% end %>
+  <p>Leave a comment of gratitude or condemnation.<p>
+  <p>Or return <%= link_to "home", root_path %>.<p>
+<br>
+  <div class="field input-group margin-bottom-sm">
+  <%= form_for @comment, url: user_post_comments_path(@post.user_id, @post.id) do |f| %>
+    <%= f.text_field :content, class: "input-group" %>
+    <br>
+    <%= f.submit "Submit" %>
+  <% end %>
+  </div>
+</div>

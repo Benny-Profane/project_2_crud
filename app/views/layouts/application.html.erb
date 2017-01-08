@@ -9,22 +9,17 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+       <div class="navbar-header">
           <%= link_to "Home", root_path, :class =>"navbar-brand" %>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
         </div>
-
-<!--   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div> -->
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <% if current_user %>
@@ -44,40 +39,33 @@
               <li><a data-target="#about" data-toggle="modal" data-backdrop="true" href="#about">About</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="jumbotron">
+  <h3 class="text-pulsate">Yet must the Sensorium be nourish’d</h3>
+</div>
 
 <div class="text-center"><!-- Text center -->
-
-
-  <div class="container">
-    <% flash.each do |type, message| %>
-      <p class="flash <%= type.to_s %>"><%= message %></p>
-    <% end %>
-  </div>
-
-
-<%= yield %>
+  <!-- This div holds the various flash messages -->
+    <div class="container">
+      <% flash.each do |type, message| %>
+        <p class="flash <%= type.to_s %>"><%= message %></p>
+      <% end %>
+    </div>
 
 </div> <!-- Text center ends -->
 
-<!-- footer -->
-<!--   <div class="navbar navbar-inverse navbar-fixed-bottom navbar-inner" role="navigation">
-      <div class="container">
-          <div class="navbar-text pull-right">
-            <a href="#"><i class="fa fa-bug fa-spin fa-2x fa-fw"></i></a>
-          </div>
-      </div>
-  </div> -->
-<!-- footer ends -->
 
+<%= yield %>
 
 <!-- Jquery Modal Classes -->
 <div class="modal fade" id="about" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-       <h5>ABOUT</h5>
+       <!-- <h5>ABOUT</h5> -->
+       <!-- More styling for Modal -->
         <div class="modal-body">
          <p>"Before our palace stands a mirror,
          the ascent to which consists of five and twenty steps
@@ -95,6 +83,15 @@
   </div>
 </div>
 
+<!-- footer -->
+<!--   <div class="navbar navbar-inverse navbar-fixed-bottom navbar-inner" role="navigation">
+      <div class="container">
+          <div class="navbar-text pull-right">
+            <a href="#"><i class="fa fa-bug fa-spin fa-2x fa-fw"></i></a>
+          </div>
+      </div>
+  </div> -->
+<!-- footer ends -->
 
 
 </body>

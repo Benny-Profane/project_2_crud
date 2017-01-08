@@ -1,31 +1,30 @@
-<div class="text-center">
 
-<!-- <div class="bg"></div>
-  <div class="bg"></div> -->
-    <div class="jumbotron">
-      <h3>Yet must the Sensorium be nourish’d</h3>
-    </div>
+<div id="post-all">
+  <% @posts.each do |post| %><br><br>
+    <%= post.post_votes.length %>
 
-<% @posts.each do |post| %><br><br>
-  <%= post.post_votes.length %>
-  <%= link_to post.title, user_post_path(post.user_id, post.id) %>
-  <%= post.content %>
-  Submitted by <%= User.find(post.user_id).name %>
-  <%= post.created_at %>
-  <%= link_to "comment?", new_user_post_comment_path(post.user_id, post.id) %>
+    <%= link_to post.title, user_post_path(post.user_id, post.id) %>
+    <%= post.content %>
+
+    <%= link_to post.title, post.content(post.user_id, post.id) %>
+    <%= post.content %>
+
+    Submitted by <%= User.find(post.user_id).name %>
+    <!-- Still looking for an appropriate gem for stylized time stamps -->
+    <!--<%= post.created_at %>-->
+    <%= link_to "comment?", new_user_post_comment_path(post.user_id, post.id) %>
 
 
-  <% if current_user && current_user.post_votes.find { |h| h[:post_id] == post.id }.nil? %>
-  <%= link_to "Up Vote", post_votes_path(post_id: post.id), method: :post %>
+    <% if current_user && current_user.post_votes.find { |h| h[:post_id] == post.id }.nil? %>
+    <%= link_to "Up Vote", post_votes_path(post_id: post.id), method: :post %>
+    <% end %>
+
+   <% if session[:user_id] == post.user_id %>
+   <!-- Should Editing posts even be a function? -->
+     <%= link_to "edit post", edit_user_post_path(post.user_id, post.id) %>
+     <%= link_to "delete post", user_post_path(post.user_id, post.id), method: :delete, data: {confirm: "Are you sure?"} %>
+   <% end %>
   <% end %>
-
- <% if session[:user_id] == post.user_id %>
-   <%= link_to "edit post", edit_user_post_path(post.user_id, post.id) %>
-   <%= link_to "delete post", user_post_path(post.user_id, post.id), method: :delete, data: {confirm: "Are you sure?"} %>
- <% end %>
-<% end %>
-
 </div>
-<br>
 
 

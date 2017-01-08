@@ -10,6 +10,8 @@
 
 body {
   font-family: 'Playfair Display SC', serif;
+  background-color: #000000;
+  color: white;
 }
 
 .navbar-default {
@@ -45,21 +47,42 @@ body {
   background-color: transparent;
   }
 
-body {
-background-color: #000000;
-color: white;
-}
-
 .jumbotron {
   background-image: image-url('demonfun.jpg');
-  background-repeat:no-repeat;
-  background-position:center;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   padding: 300px 0 140px 0;
-  margin-bottom:70px;
-  height: 250px;
+  margin: -25px 0px 0px 0px;
+  height: 200px;
   color: white;
+  text-align: center;
   text-shadow: #444 0 1px 1px;
+}
+
+.text-pulsate {
+  -webkit-animation: pulsate 5s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0;
+  margin: -275px 10px 10px;
+  font-size: 40px;
+}
+
+@-webkit-keyframes pulsate {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0;
+    }
+
+}
+
+.text-center{
+ border: 2px solid white;
 }
 
 #new_user {
@@ -78,4 +101,46 @@ color: white;
   margin: auto;
   width: 400px;
   max-width: 80%;
+}
+
+#comment-container{
+  margin: auto;
+  width: 400px;
+  max-width: 80%;
+  text-align: center;
+}
+
+#comment_content{
+  margin: 0;
+  position: relative;
+  margin: 0px 0px 0px 110px;
+}
+
+#new_comment{
+  margin: 0;
+  color: black;
+  position: relative;
+  margin: 0px -400px 0px 0px;
+}
+#user-edit-container{
+  height: 800px;
+  margin: auto;
+  background-image: url(http://payload67.cargocollective.com/1/1/60195/3644861/01_Remedios-Varo-003.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+}
+
+#user-edit-text{
+  margin: 0;
+  text-align: center;
+}
+
+#post-all{
+  margin: 0;
+  text-align: center;
+}
+
+.modal-dialog {
+  color: blue;
 }

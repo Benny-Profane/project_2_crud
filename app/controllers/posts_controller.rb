@@ -21,6 +21,7 @@ class PostsController < ApplicationController
   end
 
   def show
+     # The show route to a post will be an active link to the URL
      @post = Post.find(params[:id])
      @user = @post.user
      @comments = @post.comments

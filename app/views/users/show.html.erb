@@ -1,5 +1,11 @@
 
-
-This is where you can view, <%= link_to "edit", edit_user_path(current_user.id) %>
-and <%= link_to "destroy", user_path(current_user.id), method: :delete, data: {confirm: "Are you sure?"} %> your profile.
-<br><br>
+  <p id="user-edit-text">
+    Hello <%= @user.name %>,
+    <br>
+    While we hope you enjoy being you, if you feel the need to <%= link_to "edit", edit_user_path(current_user.id) %> your profile, please do.
+    <br>
+    If you want to check out eternally then just click <%= link_to "destroy", user_path(current_user.id), method: :delete, data: {confirm: "Are you sure?"} %> and its gone.
+  </p>
+  <br>
+<div id="user-edit-container">
+</div>
