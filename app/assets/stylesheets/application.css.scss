@@ -52,7 +52,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 300px 0 140px 0;
+  padding: 100px 0 140px 0;
   margin: -25px 0px 0px 0px;
   height: 200px;
   color: white;
@@ -64,25 +64,25 @@ body {
   -webkit-animation: pulsate 5s ease-out;
   -webkit-animation-iteration-count: infinite;
   opacity: 0;
-  margin: -275px 10px 10px;
-  font-size: 40px;
+  margin: -75px 10px 10px;
+  font-size: 25px;
 }
 
 @-webkit-keyframes pulsate {
     0% {
-        opacity: 0;
+        opacity: 0.2;
     }
     50% {
         opacity: 1.0;
     }
     100% {
-        opacity: 0;
+        opacity: 0.2;
     }
 
 }
 
 .text-center{
- border: 2px solid white;
+ // border: 2px solid white;
 }
 
 #new_user {
@@ -122,17 +122,26 @@ body {
   position: relative;
   margin: 0px -400px 0px 0px;
 }
-#user-edit-container{
+#user-show-container{
   height: 800px;
   margin: auto;
-  background-image: url(http://payload67.cargocollective.com/1/1/60195/3644861/01_Remedios-Varo-003.jpg);
+  // background-image: url(http://payload67.cargocollective.com/1/1/60195/3644861/01_Remedios-Varo-003.jpg);
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
 }
 
-#user-edit-text{
+#user-show-text{
   margin: 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#user-edit-container {
+  margin: auto;
+  margin-top: 20px;
+  width: 400px;
+  max-width: 80%;
   text-align: center;
 }
 
@@ -143,4 +152,16 @@ body {
 
 .modal-dialog {
   color: blue;
+}
+
+#signup {
+  text-align: center;
+}
+
+.actions{
+  text-align: center;
+}
+
+.error_messages{
+  text-align: center;
 }

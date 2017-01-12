@@ -1,11 +1,11 @@
 
-  <p id="user-edit-text">
-    Hello <%= @user.name %>,
+  <p id="user-show-text">
+    Hey there <%= @user.name %>,
     <br>
     While we hope you enjoy being you, if you feel the need to <%= link_to "edit", edit_user_path(current_user.id) %> your profile, please do.
     <br>
     If you want to check out eternally then just click <%= link_to "destroy", user_path(current_user.id), method: :delete, data: {confirm: "Are you sure?"} %> and its gone.
   </p>
   <br>
-<div id="user-edit-container">
+<div id="user-show-container">
 </div>

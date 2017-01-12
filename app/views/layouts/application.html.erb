@@ -42,22 +42,26 @@
     </div><!-- /.container-fluid -->
 </nav>
 
+
 <div class="jumbotron">
   <h3 class="text-pulsate">Yet must the Sensorium be nourish’d</h3>
+<div class="text-center"> <!-- Text center -->
+    <!-- This div holds the various flash messages -->
+      <div class="container">
+        <% flash.each do |type, message| %>
+          <p class="flash <%= type.to_s %>"><%= message %></p>
+        <% end %>
+      </div>
+  </div>
+
 </div>
-
-<div class="text-center"><!-- Text center -->
-  <!-- This div holds the various flash messages -->
-    <div class="container">
-      <% flash.each do |type, message| %>
-        <p class="flash <%= type.to_s %>"><%= message %></p>
-      <% end %>
-    </div>
-
-</div> <!-- Text center ends -->
-
+<!-- Text center ends -->
 
 <%= yield %>
+
+<!-- </div> -->
+ <!-- Text center ends -->
+
 
 <!-- Jquery Modal Classes -->
 <div class="modal fade" id="about" role="dialog">
@@ -82,16 +86,6 @@
     </div>
   </div>
 </div>
-
-<!-- footer -->
-<!--   <div class="navbar navbar-inverse navbar-fixed-bottom navbar-inner" role="navigation">
-      <div class="container">
-          <div class="navbar-text pull-right">
-            <a href="#"><i class="fa fa-bug fa-spin fa-2x fa-fw"></i></a>
-          </div>
-      </div>
-  </div> -->
-<!-- footer ends -->
 
 
 </body>

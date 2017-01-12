@@ -2,10 +2,11 @@ class PostsController < ApplicationController
     before_action :authorize, except: [:index, :show]
 
   def index
-
+     # @posts = Post.all
   end
 
   def new
+     # @posts = Post.all
      @user = User.find(params[:user_id])
      @post = @user.posts.new
   end
@@ -21,7 +22,8 @@ class PostsController < ApplicationController
   end
 
   def show
-     # The show route to a post will be an active link to the URL
+     # The show route to a post will be an active link to the content-URL
+     # @posts = Post.all
      @post = Post.find(params[:id])
      @user = @post.user
      @comments = @post.comments

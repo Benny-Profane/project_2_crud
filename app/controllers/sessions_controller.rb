@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    @posts = Post.all
   end
 
   def create
