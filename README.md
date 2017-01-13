@@ -14,9 +14,9 @@ Ruby on Rails | Postgresql Database | Active Record | Javascript | JQuery | Boot
 This was my first project using Ruby and its framework Rails.
 It was also my first encounter with more in depth MVC framework, restful routing, user authentication, production deployment using Heroku and maintaining a persistent database.
 
-It took some time and head scratching to understand the real power of "convention over configuration" that is essential to the RoR framework. The "rails magic" (゜。゜) of having entire file structures and web applications built with just one command line in the terminal  I wanted to avoid too much of that rails magic by simply generating scaffolding. This allowed me plenty of opportunities to test the framework, while navigating all sorts of errors to improve my debugging skills. 
+It took some time and head scratching to understand the real power of "convention over configuration" that is essential to the RoR framework. I wanted to avoid too much of that rails magic by simply generating scaffolding. This allowed me plenty of opportunities to test the framework, while navigating all sorts of errors and to improve my debugging skills 
 
-While using sites likes Reddit or Hackernews as a rough blueprint I initially knew that I needed to autheticate & authorize users and maintain a proper application layout as described in the Ruby Style Guide such as creating restful routes, formatting templates and layouts to be DRY, and proper namespacing.
+While using sites likes Reddit or Hackernews as a rough blueprint I knew that I needed to autheticate & authorize users and maintain a proper application layout as described in the Ruby Style Guide such as creating restful routes, formatting templates and layouts to be DRY, and proper namespacing.
 
 
 Citations :
