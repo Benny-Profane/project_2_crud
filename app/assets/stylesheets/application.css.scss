@@ -1,10 +1,6 @@
-
-
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC');
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -99,7 +95,7 @@ body {
 
 #login-form  {
   margin: auto;
-  width: 400px;
+  width: 219px;
   max-width: 80%;
 }
 
@@ -122,6 +118,7 @@ body {
   position: relative;
   margin: 0px -400px 0px 0px;
 }
+
 #user-show-container{
   height: 800px;
   margin: auto;
@@ -163,5 +160,10 @@ body {
 }
 
 .error_messages{
+  text-align: center;
+}
+
+#Log{
+  margin: 10px, 0, 0, 0;
   text-align: center;
 }
